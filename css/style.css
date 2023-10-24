@@ -1,4 +1,4 @@
-/* 세팅 */
+/* -----세팅----- */
 @font-face {
     font-family: 'DNFForgedBlade';
     font-style: normal;
@@ -31,7 +31,11 @@ body {
     cursor: pointer;
 }
 
-/* ---헤더--- */
+
+
+
+
+/* ---------------헤더--------------- */
 header {
     background-color: black;
     height: 55px;
@@ -49,15 +53,12 @@ header {
     margin-left: -20px;
     margin-top: 10px;
     align-items: center;
-
-    /* background-color: blanchedalmond; */
 }
 
 .orange_icon {
     width: 60px;
     height: 60px;
     background-image: url("/assets/icon/icons8-orange-64.png");
-    /* background-color: orange; */
     scale: 60%;
 }
 
@@ -69,56 +70,27 @@ header {
     color: orange;
 }
 
-/* ---상단--- */
+
+
+
+
+/* ---------------상단--------------- */
 .feature_home {
     height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
     
-    /* background-image: url("./asset/img/[그대들은\ 어떻게\ 살\ 것인가]\ 메인\ 예고편\ 0-22\ screenshot.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
     }
 
-/* .bg_frame {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 682px;
-    content: '';
-    background: linear-gradient(to right, #181819 0%, #181819 30%, rgba(24, 24, 25, 0) 100%);
-}
-
-.bg_frame::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 682px;
-    content: '';
-    background: linear-gradient(to right, #181819 0%, #181819 30%, rgba(24, 24, 25, 0) 100%);
-}
-
-.bg_frame::after {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 682px;
-    content: '';
-    background: linear-gradient(to right, rgba(24, 24, 25, 0) 0%, #181819 70%, #181819 100%);
-} */
-
-/* 영화 비주얼 리스트 */
+/* 상단 랜덤 이미지 및 텍스트 (영화 비주얼 리스트) */
 .movievisual_list {
     position: relative;
     width: 1100px;
     height: 730px;
-
-    /* background-color: aquamarine; */
 }
 
 .movievisual_BG {
@@ -146,8 +118,6 @@ header {
     text-overflow: ellipsis;
     color: rgba(255, 255, 255, 0.9);
     z-index: 2;
-
-    /* background-color: darkslategray; */
 }
 
 .txt_feature {
@@ -164,31 +134,17 @@ header {
     -webkit-line-clamp: 4;
     z-index: 2;
     top: 250px;
-    
-    /* background-color: darkslategray; */
-    ;
 }
 
 
-/* 예매율 순위 */
-/* .slide_ranking {
-    display: none;
-    position: relative;
-    width: 1100px;
-    
-    background-color: rgb(148, 39, 90);
-} */
 
 
 
-/* ---하단--- */
+/* ---------------하단--------------- */
 .section_home {
     width: 1100px;
     margin: 70px auto 0px auto;
-
-    /* background-color: darkcyan; */
 }
-
 
 /* 검색 */
 .search_area {
@@ -239,8 +195,6 @@ header {
 /* 영화 순위 */
 .movie_area {
     margin: 60px 0px;
-
-    /* background-color: aqua; */
 }
 
 /* 영화 순위 타이틀 */
@@ -260,8 +214,6 @@ header {
     display: grid;
     width: 1100px;
     grid-template-columns: repeat(5, 1fr);
-    /* justify-content: center; */
-    /* place-content: center; */
     place-items: center;
 }
 
@@ -296,7 +248,6 @@ header {
     width: 180px;
     height: 283px;
     border-radius: 15px;
-    /* margin-left: 23px; */
 }
 
 .movieName {

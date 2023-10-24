@@ -29,8 +29,10 @@ const API_Upcoming = "https://api.themoviedb.org/3/movie/upcoming?language=ko-KR
 const API_MovieImage = "https://api.themoviedb.org/3/movie/961268/images"
 
 
+
 // fetchThen 함수
 function fetchThen(data) {
+	// ---API---
 	// HTML 초기세팅
 	let _results = data['results'];
 	movieCardList.innerHTML = "";
@@ -74,13 +76,11 @@ function fetchThen(data) {
 		})
 	})
 
+	// ---검색 기능---
 	function search(event) {
 		event.preventDefault();
 		const searchWord = searchInput.value.toLowerCase();
 		searchInput.value = "";
-
-		// tset
-		// console.log(searchWord);
 
 		// 데이터를 배열로 가져오고 title을 소문자로 변환
 		let title_list = _results.map((item) => {
@@ -151,7 +151,7 @@ function fetchThen(data) {
 			});
 		};
 	};
-	// 검색 기능
+	// 검색 기능 작동
 	search_area.addEventListener("submit", search);
 }
 
@@ -179,23 +179,13 @@ function feature(data) {
 	`
 
 	feature_home.style.backgroundImage = `url("${IMAGE_BASE_URL}${_poster_path}")`
-	    
 	feature_home.insertAdjacentHTML("beforeend", temp_html);
 }
 
 
 
 // run
-
-// languageChange
-// function languageChange() {
-// 	API_TopRated = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1"
-// }
-
 fetch(API_TopRated, options)
 	.then(response => response.json())
-	// .then(response => console.log(response))
 	.then(data => fetchThen(data))
 	.catch(err => console.error(err));
-
-
