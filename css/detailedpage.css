@@ -1,4 +1,4 @@
-#form-commentInfo {
+/* #form-commentInfo {
     width: 200%;
   }
   
@@ -30,7 +30,7 @@
     color: #394867;
     border-radius: 10px;
   }
-  
+   */
   #go-top {
     position: fixed;
     right: 30px;
@@ -43,3 +43,27 @@
     color: black;
   }
   
+.review_container {
+  background-color: blueviolet;
+}
+
+.review {
+  background-color: cadetblue;
+  max-width: 100%;
+}
+
+.review_list {
+  background-color: darksalmon;
+  width: 100%;
+}
+
+.review_content {
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
