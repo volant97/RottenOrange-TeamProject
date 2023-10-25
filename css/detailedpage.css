@@ -1,0 +1,45 @@
+#form-commentInfo {
+    width: 200%;
+  }
+  
+  
+  #nick-input {
+    width: 2%;
+    height: 2rem;
+    border-radius: 10px;
+  }
+
+  #password-input {
+    width: 3%;
+    height: 2rem;
+    border-radius: 10px;
+  }
+  
+  #comment-input {
+    width: 20%;
+    height: 2rem;
+    border-radius: 10px;
+  }
+  
+  #submit {
+    background-color: burlywood;
+    width: 3.5rem;
+    height: 2.4rem;
+    font-size: 15px;
+    font-weight: bold;
+    color: #394867;
+    border-radius: 10px;
+  }
+  
+  #go-top {
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    outline: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 9999;
+    color: black;
+  }
+  
