@@ -28,8 +28,6 @@ const API_Popular = "https://api.themoviedb.org/3/movie/popular?language=ko-KR&p
 const API_Upcoming = "https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=1";
 const API_MovieImage = "https://api.themoviedb.org/3/movie/961268/images"
 
-
-
 // fetchThen 함수
 function fetchThen(data) {
 	// ---API---
