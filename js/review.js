@@ -17,17 +17,16 @@ export function showReview() {
     console.log(reviews);
     let temp_html = `
         <div class="review_content">
-            <p>${newReview.name}</p>
+            <p>${newReview.name}:</p>
             <p>${newReview.comment}</p>
-            <button class="editBtn">수정</button>
             <button class="deleteBtn">삭제</button>
         </div>       
     `;
     reviewList.innerHTML += temp_html;
 
     // 수정 이벤트
-    const editBtn = document.querySelector(".editBtn");
-    editBtn.addEventListener("click", editReview);
+    // const editBtn = document.querySelector(".editBtn");
+    // editBtn.addEventListener("click", editReview);
 
     // 삭제 이벤트 (패스워드가 있어야 삭제 가능)
     const deleteBtn = document.querySelector(".deleteBtn");
@@ -79,15 +78,14 @@ export function showReview() {
 
 showReview();
 
-btn.onclick = pressBtn;
-
 const backToTop = () => {
-  document.getElementById('go-top').addEventListener('click', () => {
+  document.getElementById("go-top").addEventListener("click", () => {
+    console.log("click");
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
-  })
+  });
 };
 backToTop();
