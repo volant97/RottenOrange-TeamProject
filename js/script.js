@@ -182,7 +182,7 @@ function feature(data) {
 
 
 // run
-fetch(API_NowPlaying, options)
+fetch(API_Popular, options)
 	.then(response => response.json())
 	.then(data => fetchThen(data))
 	.catch(err => console.error(err));

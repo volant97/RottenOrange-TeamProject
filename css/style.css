@@ -214,6 +214,7 @@ header {
 .Top_Rated_highlight {
     color: rgb(255, 59, 59);
     font-size: 60%;
+    margin-left: 10px;
 }
 
 /* 영화 카드 리스트 */
