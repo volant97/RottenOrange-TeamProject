@@ -6,7 +6,6 @@ const searchBtn = document.querySelector(".searchBtn");
 const movieCardList = document.querySelector(".movieCardList");
 const movieCard = document.querySelector(".movieCard");
 const movieImage = document.querySelector(".movieImage");
-const searchWord = searchInput.value.toLowerCase();
 const feature_home = document.querySelector(".feature_home");
 const feature_BG = document.querySelector(".feature_BG");
 const languageBtn = document.querySelector(".languageBtn");
@@ -184,7 +183,7 @@ function feature(data) {
 }
 
 // run
-fetch(API_NowPlaying, options)
-  .then((response) => response.json())
-  .then((data) => fetchThen(data))
-  .catch((err) => console.error(err));
+fetch(API_Popular, options)
+	.then(response => response.json())
+	.then(data => fetchThen(data))
+	.catch(err => console.error(err));

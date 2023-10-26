@@ -27,6 +27,10 @@ body {
     padding: 0px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .reload {
     cursor: pointer;
 }
@@ -56,10 +60,13 @@ header {
 }
 
 .orange_icon {
+    background-image: url("../assets/icon/icons8-orange-64.png");
+    background-repeat: no-repeat;
+    background-position: 50% 120%;
+
     width: 60px;
     height: 60px;
-    background-image: url("/assets/icon/icons8-orange-64.png");
-    scale: 60%;
+    scale: 70%;
 }
 
 .rotten {
@@ -207,6 +214,7 @@ header {
 .Top_Rated_highlight {
     color: rgb(255, 59, 59);
     font-size: 60%;
+    margin-left: 10px;
 }
 
 /* 영화 카드 리스트 */
