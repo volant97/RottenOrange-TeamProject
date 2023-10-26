@@ -16,6 +16,8 @@ export function showReview() {
   const user = document.querySelector(".user");
   const reviewList = document.querySelector(".review_list");
   const deleteModal = document.querySelector(".modal_container");
+  const showTime = document.createElement('div');
+  showTime.className = 'time';
 
   // 재할당 가능하도록 let으로 선언
   let reviews = []; // 저장된 리뷰 리스트
@@ -23,6 +25,19 @@ export function showReview() {
   // localStorage에 리뷰 리스트 저장
   function saveReviews() {
     localStorage.setItem("reviews", JSON.stringify(reviews));
+  }
+  //시간 표시
+  function generateTime() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1; 
+    const wDate = date.getDate();
+    const hour = date.getHours();
+    const min = date.getMinutes();
+    const sec = date.getSeconds();
+  
+    const time = year + '-' + month + '-' + wDate + ' ' + hour + ':' + min + ':' + sec;
+    return time;
   }
 
   // localStorage에 저장된 리뷰 리스트 불러오기
@@ -40,6 +55,8 @@ export function showReview() {
             <p>${newReview.comment}</p>
             <p class="hidden">${newReview.password}</p>
             <button id="${newReview.password}" class="deleteBtn">삭제</button>
+            <h1>${newReview.time}</h1>
+            
         </div>
     `;
     reviewList.innerHTML += temp_html;
@@ -113,6 +130,7 @@ export function showReview() {
     const newName = name.value;
     const newPwd = password.value;
     const newCmd = comment.value;
+    const time = generateTime();
     name.value = "";
     password.value = "";
     comment.value = "";
@@ -125,6 +143,7 @@ export function showReview() {
         name: newName,
         password: newPwd,
         comment: newCmd,
+        time: time
       };
 
       reviews.push(newReview);
@@ -143,6 +162,8 @@ export function showReview() {
 
 showReview();
 
+
+// 스크롤 업 기능
 const backToTop = () => {
   document.getElementById("go-top").addEventListener("click", () => {
     console.log("click");
@@ -161,3 +182,4 @@ backToTop();
 
 //   // (2) localStorage에 저장
 // }
+
