@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'DNFForgedBlade';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Light.otf')format('opentype')
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 310px;
+}
+.imgbox>img {
+    width: 300px;
+    height: 200px;
+    margin: 5px;
+}
+.movieImage{
+    
+    width: 200px;
+    height: 115px;
+    margin: 5px;
+}
+.photo_title{
+    margin-top: -250px;
+    margin-right: -60px;
+}
