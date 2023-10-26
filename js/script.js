@@ -74,6 +74,7 @@ function fetchThen(data) {
     card.addEventListener("click", function () {
       let movieCardId = this.getAttribute("data-id");
       alert(`영화 ID : ${movieCardId}`);
+      location.href = `./detail.html?id=${movieCardId}`;
     });
   });
 
@@ -145,9 +146,9 @@ function fetchThen(data) {
         const movieCards = document.querySelectorAll(".movieCard");
         movieCards.forEach((card) => {
           card.addEventListener("click", function () {
-            location.href = "https://www.naver.com/";
             let movieCardId = this.getAttribute("data-id");
-            alert(`영화 ID : ${movieCardId}`);
+            alert(`ID : ${movieCardId}`);
+            location.href = `./index.html?id=${movieCardId}`;
           });
         });
       });

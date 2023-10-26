@@ -20,19 +20,6 @@ input {
   margin-top: 5px;
 }
 
-/* scroll up */
-#go-top {
-  position: fixed;
-  right: 30px;
-  bottom: 50px;
-  outline: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  z-index: 9999;
-  color: black;
-}
-
 .review_container {
   padding: 1rem;
 }
@@ -103,6 +90,23 @@ input {
   margin-left: 0.5rem;
 }
 
+.modal_container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+}
+
+.modal_content {
+  background-color: white;
+  padding: 5rem;
+}
+
 .review_content>h1 {
   margin-left: 2rem;
   color: black;
@@ -114,6 +118,15 @@ input {
   display: none;
 }
 
-.dd {
-  height: 1000px;
+/* scroll up */
+#go-top {
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 9999;
+  color: black;
 }
