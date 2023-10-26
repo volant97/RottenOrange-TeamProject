@@ -16,12 +16,11 @@ const options = {
     backDrops.forEach(item => {
       let filePath = item["file_path"];
       let temHtml = `
-      <div class=imgbox>
           <div class="movieImage">
               <img src="${IMAGE_BASE_URL}${filePath}"/>
           </div>
-      </div>`;
-  // imgbox.insertAdjacentHTML("beforeend", temHtml);
+      `;
+  imgbox.insertAdjacentHTML("beforeend", temHtml);
     })
   }
   
