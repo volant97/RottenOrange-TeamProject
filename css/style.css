@@ -27,6 +27,10 @@ body {
     padding: 0px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .reload {
     cursor: pointer;
 }
@@ -56,7 +60,7 @@ header {
 }
 
 .orange_icon {
-    background-image: url("/assets/icon/icons8-orange-64.png");
+    background-image: url("../assets/icon/icons8-orange-64.png");
     background-repeat: no-repeat;
     background-position: 50% 120%;
 

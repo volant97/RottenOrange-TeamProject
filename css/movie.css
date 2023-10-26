@@ -25,6 +25,10 @@ body {
     padding: 0px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .cursor {
     cursor: pointer;
 }
@@ -97,9 +101,9 @@ body {
     /* border: 3px dotted blue; */
 }
 
-.video_area > img {
+/* .video_area > img {
     width: 1100px
-}
+} */
 
 
 /* 영화 정보 */
