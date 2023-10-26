@@ -5,12 +5,27 @@ export function showReview() {
   const comment = document.querySelector(".comment");
   const user = document.querySelector(".user");
   const reviewList = document.querySelector(".review_list");
+  const showTime = document.createElement('div');
+  showTime.className = 'time';
 
   let reviews = []; // 저장된 감상평 리스트
 
   // localstorage에 리뷰 리스트 저장
   function saveReviews() {
     localStorage.setItem("reviews", JSON.stringify(reviews));
+  }
+  //시간 표시
+  function generateTime() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1; 
+    const wDate = date.getDate();
+    const hour = date.getHours();
+    const min = date.getMinutes();
+    const sec = date.getSeconds();
+  
+    const time = year + '-' + month + '-' + wDate + ' ' + hour + ':' + min + ':' + sec;
+    return time;
   }
 
   const showReviews = (newReview) => {
@@ -20,16 +35,19 @@ export function showReview() {
             <p>${newReview.name}:</p>
             <p>${newReview.comment}</p>
             <button class="deleteBtn">삭제</button>
+            <h1>${newReview.time}</h1>
+            
         </div>       
     `;
     reviewList.innerHTML += temp_html;
+    
 
     // 수정 이벤트
     // const editBtn = document.querySelector(".editBtn");
     // editBtn.addEventListener("click", editReview);
 
     // 삭제 이벤트 (패스워드가 있어야 삭제 가능)
-    const deleteBtn = document.querySelector(".deleteBtn");
+    const deleteBtn = document.querySelectorAll(".deleteBtn");
     deleteBtn.addEventListener("click", deleteReview);
   };
 
@@ -48,6 +66,7 @@ export function showReview() {
     const newName = name.value;
     const newPwd = password.value;
     const newCmd = comment.value;
+    const time = generateTime();
     name.value = "";
     password.value = "";
     comment.value = "";
@@ -60,6 +79,7 @@ export function showReview() {
         name: newName,
         password: newPwd,
         comment: newCmd,
+        time: time
       };
 
       reviews.push(newReview);
@@ -78,6 +98,8 @@ export function showReview() {
 
 showReview();
 
+
+// 스크롤 업 기능
 const backToTop = () => {
   document.getElementById("go-top").addEventListener("click", () => {
     console.log("click");
@@ -89,3 +111,4 @@ const backToTop = () => {
   });
 };
 backToTop();
+

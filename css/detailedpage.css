@@ -1,3 +1,25 @@
+@font-face {
+  font-family: 'DNFForgedBlade';
+  font-style: normal;
+  font-weight: 300;
+  src: url('//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Light.otf')format('opentype')
+}
+
+body,
+input {
+  font-family: 'DNFForgedBlade';
+}
+
+#refresh {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 9999;
+  color: black;
+  margin-top: 5px;
+}
+
 /* scroll up */
 #go-top {
   position: fixed;
@@ -15,11 +37,12 @@
   padding: 1rem;
 }
 
-.review_container > div {
+.review_container>div {
   display: flex;
   align-items: center;
 }
-.review_container > div > h2 {
+
+.review_container>div>h2 {
   padding-right: 10px;
 }
 
@@ -41,8 +64,11 @@
   border: none;
 }
 
-.review .comment_container > button {
+.review .comment_container>button {
   height: 2rem;
+  background: linear-gradient(-45deg, #33ccff 0%, #ff99cc 100%);
+  color: black;
+  border-radius: 10px;
 }
 
 .review .name {
@@ -69,12 +95,19 @@
   border-bottom: solid 1px #777;
 }
 
-.review_content > p {
+.review_content>p {
   padding: 0 0.2rem;
 }
 
-.review_content > button {
+.review_content>button {
   margin-left: 0.5rem;
+}
+
+.review_content>h1 {
+  margin-left: 2rem;
+  color: black;
+  font-size: 15px;
+
 }
 
 .hidden {
