@@ -42,6 +42,7 @@ function fetchThen(data) {
         let _vote_average = item["vote_average"];
 
         let temp_html = `
+        <a href="./detailedpage.html">
 		<div data-id="${_id} "class="movieCard">
 			<div class="movieImage">
 				<img src="${IMAGE_BASE_URL}${_poster_path}"/>
@@ -55,7 +56,8 @@ function fetchThen(data) {
 			<div class="movieGrade">
 				<p>평점 : ${_vote_average}</p>
 			</div>
-		</div>`;
+		</div>
+        </a>`;
 
         movieCardList.insertAdjacentHTML("beforeend", temp_html);
     });
@@ -68,7 +70,8 @@ function fetchThen(data) {
     movieCards.forEach((card) => {
         card.addEventListener("click", function () {
             let movieCardId = this.getAttribute("data-id");
-            alert(`영화 ID : ${movieCardId}`);
+            localStorage.setItem("clickID", movieCardId);
+            // alert(`영화 ID : ${movieCardId}`);
             // location.href = `./detail.html?id=${movieCardId}`;
         });
     });
@@ -178,8 +181,19 @@ function feature(data) {
     feature_home.insertAdjacentHTML("beforeend", temp_html);
 }
 
+
 // run
-fetch(API_Popular, options)
+async function mainRun() {
+    await fetch(API_Popular, options)
     .then(response => response.json())
     .then(data => fetchThen(data))
     .catch(err => console.error(err));
+}
+
+export const clickedID = localStorage.getItem("clickID")
+
+mainRun();
+
+
+
+
