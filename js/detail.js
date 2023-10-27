@@ -1,26 +1,46 @@
 import { movie } from "./movie.js";
+import { detailList } from "./detailList.js"
 import { showReview, backToTop } from "./review.js";
 import { photo } from "./photo.js";
 
-const API_KEY = "7ea5a4480f6e34a1f8f87e7241924dd2";
-const API_ID = 976573; // 엘리멘탈(임의 id값)
+const API_ID = 980489; // 엘리멘탈(임의 id값)
 
 // 가져올 API 링크
-const API_Videos_KR = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
-const API_Videos_US = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`;
+const options = {
+	method: 'GET',
+	headers: {
+	  accept: 'application/json',
+	  Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkOTU2NGFmZjVjMmQ2NTg5NjIzYmYwNTU3OWZkYTg3NCIsInN1YiI6IjY1MmYyOTYwZWE4NGM3MDEwYzFkYzYxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.tllRINCGQK3ug_vl1CgEERHfUuoXmbgBZ8X-3hswvEE'
+	}
+  };
 
-export async function detailMovies() {
-  // 첫번째 API
-  let dataKR = await fetch(API_Videos_KR).then((res) => res.json());
-  const moviesKR = dataKR.results;
-  // 두번째 API
-  let dataUS = await fetch(API_Videos_US).then((res) => res.json());
-  const moviesUS = dataUS.results;
+const API_Videos_US = `https://api.themoviedb.org/3/movie/${API_ID}/videos?language=en-US`;
+const API_Details_KR = `https://api.themoviedb.org/3/movie/${API_ID}?language=ko-KR`
+const API_Credits_KR = `https://api.themoviedb.org/3/movie/${API_ID}/credits?language=ko-KR`;
 
-  movie(moviesUS, moviesKR);
-  photo();
-  showReview();
-  backToTop();
+
+async function detailMovies() {
+	// API 1 - 영상
+	const videoDdata = await fetch(API_Videos_US, options)
+		.then(res => res.json());
+	const moviesUS = videoDdata.results;
+
+	// API 2 - 세부정보 상단
+	const detailsData = await fetch(API_Details_KR, options)
+		.then(res => res.json());
+		const detailsListKR = detailsData;
+
+	// API 3 - 세부정보 하단
+	const creditsData = await fetch(API_Credits_KR, options)
+	.then(res => res.json());
+	const creditsKR = creditsData;
+
+	movie(moviesUS);
+	detailList(detailsListKR, creditsKR);
+	photo();
+	showReview();
+	backToTop();
 }
 
+// run
 detailMovies().catch();
