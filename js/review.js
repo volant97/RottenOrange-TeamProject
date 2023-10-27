@@ -56,11 +56,11 @@ function showReview() {
             <p>${newReview.name}:</p>
             <p>${newReview.comment}</p>
           </div>
-          <div>
+      
             <p class="hidden">${newReview.password}</p>
             <p>${newReview.time}</p>
-            <button id="${newReview.password}" class="deleteBtn">삭제</button>    
-          </div>
+            <button id="${newReview.id}" class="deleteBtn">삭제</button>    
+      
         </div>
     `;
     reviewList.innerHTML += temp_html;
@@ -85,14 +85,15 @@ function showReview() {
   deleteBtnAll.forEach((item, index) => {
     item.addEventListener("click", function (event) {
       let list = event.target.parentElement;
+      console.log(list);
       let prevPw = parseInt(event.target.id);
-      handleModal(index, prevPw);
+      // handleModal(index, prevPw);
 
-      // list.remove();
-      // reviews = reviews.filter((review) => {
-      //   review.id !== parseInt(list.id);
-      // }); // 선택한 값을 제외한 배열 반환
-      // saveReviews();
+      list.remove();
+      reviews = reviews.filter((review) => {
+        review.id !== parseInt(list.id);
+      }); // 선택한 값을 제외한 배열 반환
+      saveReviews();
     });
   });
 
@@ -163,8 +164,6 @@ function showReview() {
 
   review.addEventListener("submit", handleWriteReview);
 }
-
-showReview();
 
 // 스크롤 업 기능
 const backToTop = () => {

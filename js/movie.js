@@ -1,6 +1,6 @@
 export function movie(moviesUS, moviesKR) {
-  console.log(moviesUS);
-  console.log(moviesKR);
+  console.log("us: ", moviesUS);
+  console.log("kr: ", moviesKR);
   const movies = moviesUS;
 
   const videoArea = document.querySelector(".video_area");
