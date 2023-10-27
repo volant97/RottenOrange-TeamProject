@@ -1,15 +1,3 @@
-//api
-const imgbox = document.querySelector(".imgbox");
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOGMxYmU2YTczNjk5NTEwM2E3YmUxZjA4ODlkM2ViMCIsInN1YiI6IjY1MzA4YmIyOWQ1OTJjMDBlY2NhNTFmYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HF5V0mA4wTGE3E-06jSiTT6eS-X9FYYsBKxv0zEgZc8",
-  },
-};
-const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w200/";
-const KEY = 575264;
 export function photo() {
   const imgbox = document.querySelector(".imgbox");
   const options = {
