@@ -23,4 +23,4 @@ export async function detailMovies() {
   backToTop();
 }
 
-detailMovies();
+detailMovies().catch();
