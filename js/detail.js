@@ -42,6 +42,5 @@ async function detailMovies() {
 	backToTop();
 }
 
-
 // run
-detailMovies();
+detailMovies().catch();

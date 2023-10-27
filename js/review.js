@@ -1,13 +1,3 @@
-// localStorage에 저장할 때, id(new Date())를 지정
-// 댓글리스트 출력 -> map()~~ : 하나하나마다 고유의 id를 지정
-// 지금 : id에 비밀번호
-// 변경 : id에 ID
-
-// delete button -> click -> 'id'얻어올 수 있어
-// setItem("revies", ~~~~~~);
-// ~~~~~~ -> 기존의 리뷰 중 id가 그놈이 아닌 것들만 filter
-//
-
 function showReview() {
   const review = document.querySelector(".review");
   const name = document.querySelector(".name");
@@ -26,6 +16,15 @@ function showReview() {
   function saveReviews() {
     localStorage.setItem("reviews", JSON.stringify(reviews));
   }
+
+  // localStorage에 저장된 리뷰 리스트 불러오기
+  const savedReviews = localStorage.getItem("reviews");
+  if (savedReviews !== null) {
+    const parsedReviews = JSON.parse(savedReviews);
+    reviews = parsedReviews;
+    parsedReviews.forEach(drawReviews);
+  }
+
   //시간 표시
   function generateTime() {
     const date = new Date();
@@ -41,14 +40,6 @@ function showReview() {
     return time;
   }
 
-  // localStorage에 저장된 리뷰 리스트 불러오기
-  const savedReviews = localStorage.getItem("reviews");
-  if (savedReviews !== null) {
-    const parsedReviews = JSON.parse(savedReviews);
-    reviews = parsedReviews;
-    parsedReviews.forEach(drawReviews);
-  }
-
   function drawReviews(newReview) {
     let temp_html = `
         <div id="${newReview.id}" class="review_content">
@@ -56,82 +47,57 @@ function showReview() {
             <p>${newReview.name}:</p>
             <p>${newReview.comment}</p>
           </div>
-      
-            <p class="hidden">${newReview.password}</p>
-            <p>${newReview.time}</p>
-            <button id="${newReview.id}" class="deleteBtn">삭제</button>    
-      
+          <p class="time">${newReview.time}</p>
+          <p id="password" class="password hidden" data-value="${newReview.password}">${newReview.password}</p>
+          <button id="${newReview.id}" class="deleteBtn">삭제</button>          
         </div>
     `;
     reviewList.innerHTML += temp_html;
-
-    // (1)삭제 (패스워드가 일치해야 삭제 가능)
-    // const deleteBtn = document.querySelector(".deleteBtn");
-    // deleteBtn.addEventListener("click", function (event) {
-    //   event.preventDefault();
-    //   let reviewElement = event.target.parentElement;
-    //   let prevPw = event.target.id;
-    //   handleModal(prevPw);
-
-    //   li.remove();
-    //   reviews = reviews.filter((review) => review.id !== parseInt(li.id)); // 선택한 값을 제외한 배열 반환
-    //   saveReviews();
-    // });
   }
 
   // 리뷰 삭제
   const deleteBtnAll = document.querySelectorAll(".deleteBtn");
-  console.log(deleteBtnAll);
+
   deleteBtnAll.forEach((item, index) => {
     item.addEventListener("click", function (event) {
-      let list = event.target.parentElement;
-      console.log(list);
-      let prevPw = parseInt(event.target.id);
-      // handleModal(index, prevPw);
-
-      list.remove();
-      reviews = reviews.filter((review) => {
-        review.id !== parseInt(list.id);
-      }); // 선택한 값을 제외한 배열 반환
-      saveReviews();
+      let reviewEl = event.target.parentElement; // 부모 요소
+      const pwElement = reviewEl.querySelector("#password");
+      const prevPw = pwElement.getAttribute("data-value"); // 저장된 password 값
+      let savedID = parseInt(event.target.id); // 저장된 id 값
+      handleModal(reviewEl, savedID, prevPw);
     });
   });
 
-  function handleModal(list, prevPw) {
+  function handleModal(reviewEl, savedID, prevPw) {
     deleteModal.classList.remove("hidden");
+
     const modalForm = document.querySelector(".modal_content");
     const input = document.querySelector(".modal_content input");
     input.focus();
     console.log(`저장된 pw: ${prevPw}`);
 
     modalForm.addEventListener("submit", function (event) {
-      event.preventDefault();
       const inputPw = input.value;
       console.log(`입력된 pw: ${inputPw}`);
       input.value = "";
 
-      // 리뷰 리스트 필터링
-      // filteredReviews = reviews.filter((review) => {
-      //   review.id !== parseInt(prevPw);
-      // });
-
-      // 비밀번호 검증
-      // 저장된 패스워드와 입력받은 패스워드가 일치할 경우
       if (inputPw === prevPw) {
+        reviewEl.remove();
+        // localstorage 삭제
+        reviews = reviews.filter(
+          (review) => review.id !== parseInt(reviewEl.id)
+        );
+        saveReviews();
         deleteModal.classList.add("hidden");
-        console.log(index);
       } else {
-        alert("비밀번호를 입력해주세요");
+        event.preventDefault();
+        alert("비밀번호를 다시 입력해주세요.");
       }
     });
-    // reviewList.innerHTML = "";
-
-    // deleteModal.classList.add("hidden");
-    // drawReviews(filteredReviews);
   }
 
-  function handleWriteReview(event) {
-    // event.preventDefault(); // 왜 새로고침을 해야만 삭제가 되는지
+  function handelReviews(event) {
+    event.preventDefault();
     const newName = name.value;
     const newPwd = password.value;
     const newCmd = comment.value;
@@ -155,6 +121,7 @@ function showReview() {
       drawReviews(newReview);
       user.classList.add("hidden");
       saveReviews();
+      window.location.reload();
     }
   }
 
@@ -162,35 +129,27 @@ function showReview() {
     user.classList.remove("hidden");
   });
 
-  review.addEventListener("submit", handleWriteReview);
+  review.addEventListener("submit", handelReviews);
 }
 
 // 스크롤 업 기능
 const backToTop = () => {
-  
-  window.addEventListener('scroll', () => {
-    if (document.querySelector('html').scrollTop > 100) {
-      document.getElementById('go-top').style.display = "block";
+  window.addEventListener("scroll", () => {
+    if (document.querySelector("html").scrollTop > 100) {
+      document.getElementById("go-top").style.display = "block";
     } else {
-      document.getElementById('go-top').style.display = "none";
+      document.getElementById("go-top").style.display = "none";
     }
   });
-  
-  document.getElementById('go-top').addEventListener('click', () => {
+
+  document.getElementById("go-top").addEventListener("click", () => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
-  })
+  });
 };
 backToTop();
 
 export { showReview, backToTop };
-
-// 참고
-// const handleReviews = function (reviews) {
-//   // (1) draw
-
-//   // (2) localStorage에 저장
-// }
