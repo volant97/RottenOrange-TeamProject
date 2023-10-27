@@ -1,4 +1,6 @@
 export function detailList(detailsListKR, creditsKR) {
+    const detail_Top_Inner = document.querySelector(".detail_Top_Inner");
+    
     const detailsList = detailsListKR;
     const creditsList = creditsKR;
 
@@ -20,19 +22,32 @@ export function detailList(detailsListKR, creditsKR) {
             return true;
         }
     }).slice(0, 4)
+    const actors = `${actor[0].name}, ${actor[1].name}, ${actor[2].name}, ${actor[3].name}`;
+    const overview = detailsList.overview;
+
+
+
+    <div class="detail_Top_Inner">
+                    <p>★평점</p>
+                    <p>개봉</p>
+                    <p>러닝타임</p>
+                    <p>장르</p>
+                </div>
+
     // ----작성중-----
 
     
 
     
 
-    // const actor4 = (actor) => {
-    //     for(let i=0; i<actor.length; i++){
-    //     actor[i]
-    // }
+    
+        // for(let i=0; i<actor.length; i++){
+        // actor = actor[i].name
+        // }
+    
  
-    const overview = detailsList.overview;
+    
 
-    console.log(actor[0].id);
+    console.log(overview);
     // console.log(actor[0].name + actor[2].name);
 }
