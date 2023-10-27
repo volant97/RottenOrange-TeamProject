@@ -8,7 +8,7 @@
 // ~~~~~~ -> 기존의 리뷰 중 id가 그놈이 아닌 것들만 filter
 //
 
-export function showReview() {
+function showReview() {
   const review = document.querySelector(".review");
   const name = document.querySelector(".name");
   const password = document.querySelector(".password");
@@ -16,8 +16,8 @@ export function showReview() {
   const user = document.querySelector(".user");
   const reviewList = document.querySelector(".review_list");
   const deleteModal = document.querySelector(".modal_container");
-  const showTime = document.createElement('div');
-  showTime.className = 'time';
+  const showTime = document.createElement("div");
+  showTime.className = "time";
 
   // 재할당 가능하도록 let으로 선언
   let reviews = []; // 저장된 리뷰 리스트
@@ -30,13 +30,14 @@ export function showReview() {
   function generateTime() {
     const date = new Date();
     const year = date.getFullYear();
-    const month = date.getMonth() + 1; 
+    const month = date.getMonth() + 1;
     const wDate = date.getDate();
     const hour = date.getHours();
     const min = date.getMinutes();
     const sec = date.getSeconds();
-  
-    const time = year + '-' + month + '-' + wDate + ' ' + hour + ':' + min + ':' + sec;
+
+    const time =
+      year + "-" + month + "-" + wDate + " " + hour + ":" + min + ":" + sec;
     return time;
   }
 
@@ -51,12 +52,15 @@ export function showReview() {
   function drawReviews(newReview) {
     let temp_html = `
         <div id="${newReview.id}" class="review_content">
+          <div>
             <p>${newReview.name}:</p>
             <p>${newReview.comment}</p>
+          </div>
+          <div>
             <p class="hidden">${newReview.password}</p>
-            <button id="${newReview.password}" class="deleteBtn">삭제</button>
-            <h1>${newReview.time}</h1>
-            
+            <p>${newReview.time}</p>
+            <button id="${newReview.password}" class="deleteBtn">삭제</button>    
+          </div>
         </div>
     `;
     reviewList.innerHTML += temp_html;
@@ -143,7 +147,7 @@ export function showReview() {
         name: newName,
         password: newPwd,
         comment: newCmd,
-        time: time
+        time: time,
       };
 
       reviews.push(newReview);
@@ -162,7 +166,6 @@ export function showReview() {
 
 showReview();
 
-
 // 스크롤 업 기능
 const backToTop = () => {
   document.getElementById("go-top").addEventListener("click", () => {
@@ -176,10 +179,11 @@ const backToTop = () => {
 };
 backToTop();
 
+export { showReview, backToTop };
+
 // 참고
 // const handleReviews = function (reviews) {
 //   // (1) draw
 
 //   // (2) localStorage에 저장
 // }
-
