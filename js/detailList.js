@@ -1,4 +1,7 @@
 export function detailList(detailsListKR, creditsKR) {
+    const detailTop = document.querySelector(".detail_Top");
+    const detailBottom = document.querySelector(".detail_Bottom");
+
     const detailsList = detailsListKR;
     const creditsList = creditsKR;
 
@@ -14,25 +17,103 @@ export function detailList(detailsListKR, creditsKR) {
             return true;
         }
     }).name;
-    let actor = creditsList.cast.filter(item => {
-        const department = item.known_for_department;
-        if (department === "Acting") {
-            return true;
-        }
-    }).slice(0, 4)
-    // ----작성중-----
 
-    
+    const actors = creditsList.cast
+        .filter(item => {
+            const department = item.known_for_department;
+            if (department === "Acting") {
+                return true;
+            }
+        })
+        .slice(0, 4)
+        .map(actor => {
+            return actor.name;
+        })
+        .join(", ");
 
-    
-
-    // const actor4 = (actor) => {
-    //     for(let i=0; i<actor.length; i++){
-    //     actor[i]
-    // }
- 
     const overview = detailsList.overview;
 
-    console.log(actor[0].id);
+
+    const tempHtmlTop = `
+        <h1 class="detail_Top_Header">${title}</h1>
+        <div class="detail_Top_Inner">
+            <p>★${voteAverage}</p>
+            <p>${releaseDate}</p>
+            <p>${runTime}</p>
+            <p>${genres}</p>
+        </div>`;
+
+    const tempHtmlBottom = `
+        <div class="detail_Bottom_Inner">
+            <p class="detail_Bottom_Header">감독</p>
+            <p class="detail_Bottom_Text">${director}</p>
+        </div>
+        <div class="detail_Bottom_Inner">
+            <p class="detail_Bottom_Header">출연</p>
+            <p class="detail_Bottom_Text">${actors}</p>
+        </div>
+        <div class="detail_Bottom_Inner">
+            <p class="detail_Bottom_Header">소개</p>
+            <p class="detail_Bottom_Intro">${overview}</p>
+        </div>`;
+
+    detailTop.innerHTML = tempHtmlTop;
+    detailBottom.innerHTML = tempHtmlBottom;
+
+
+    //     <div class="detail_Top_Inner">
+    // <p>★평점</p>
+    // <p>개봉</p>
+    // <p>러닝타임</p>
+    // <p>장르</p>
+    //                 </div>
+
+    // <div class="detail_Bottom">
+    // <div class="detail_Bottom_Inner">
+    //     <p class="detail_Bottom_Header">감독</p>
+    //     <p class="detail_Bottom_Text">내용</p>
+    // </div>
+    // <div class="detail_Bottom_Inner">
+    //     <p class="detail_Bottom_Header">출연</p>
+    //     <p class="detail_Bottom_Text">내용</p>
+    // </div>
+    // <div class="detail_Bottom_Inner">
+    //     <p class="detail_Bottom_Header">소개</p>
+    //     <p class="detail_Bottom_Intro">불, 물, 공기, 흙 4개의 원소들이 살고 있는 ‘엘리멘트 시티’ 재치 있고 불처럼 열정 넘치는 ‘앰버'는 어느 날 우연히
+    //         유쾌하고 감성적이며 물 흐르듯 사는 '웨이드'를 만나 특별한 우정을 쌓으며, 지금껏 믿어온 모든 것들이 흔들리는 새로운 경험을 하게 되는데... 웰컴 투 ‘엘리멘트 시티’!
+    //     </p>
+    // </div>
+    // </div>
+
+    // ----작성중-----
+
+
+
+
+
+
+
+
+
+
+
     // console.log(actor[0].name + actor[2].name);
 }
+
+
+
+
+// // (1) map -> 결과를 배열로 반환
+// let actorName = actors.map((actor) => {
+//     return actor.name;
+//   });
+//   console.log(actorName);
+//   // (2) map 리턴값 없이 사용 가능 (forEach와 같음)
+//   actors.map((actor) => {
+//     console.log(`map -> ${actor.name}`);
+//   });
+//   // (3) forEach -> 값을 순회하면서 실행 (리턴값 없음(undefined))
+//   actors.forEach((actor) => {
+//     console.log(`forEach -> ${actor.name}`);
+//     // 요소 가져와서 값 대입!
+//   });
