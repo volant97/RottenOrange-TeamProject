@@ -39,7 +39,7 @@ function fetchThen(data) {
         let _overview = item["overview"];
         let _title = item["title"];
         let _poster_path = item["poster_path"];
-        let _vote_average = item["vote_average"];
+        let _vote_average = item["vote_average"].toFixed(1);
 
         let temp_html = `
         <a data-id="${_id} "class="movieCard" href="./detailedpage.html">
@@ -118,7 +118,7 @@ function fetchThen(data) {
                 const overview = result["overview"];
                 const title = result["title"];
                 const posterPath = result["poster_path"];
-                const voteAverage = result["vote_average"];
+                const voteAverage = result["vote_average"].toFixed(1);
 
                 const temp_html = `
 				<a data-id="${id} "class="movieCard" href="./detailedpage.html">

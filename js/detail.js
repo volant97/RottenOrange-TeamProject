@@ -35,7 +35,7 @@ async function detailMovies() {
   // const creditsData = await fetch(API_Credits_KR, options)
   //   .then((res) => res.json())
   //   .catch((err) => console.error(err));
-
+  
   // promise all 사용
   const [videoData, detailsData, creditsData] = await Promise.all([
     fetch(API_Videos_US, options)
@@ -48,11 +48,11 @@ async function detailMovies() {
       .then((res) => res.json())
       .catch((err) => console.error(err)),
   ]);
-
+  
   const moviesUS = videoData.results;
   const detailsListKR = detailsData;
   const creditsKR = creditsData;
-
+  
   movie(moviesUS);
   detailList(detailsListKR, creditsKR);
   photo();

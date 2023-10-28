@@ -1,7 +1,6 @@
 export function movie(moviesUS) {
   // console.log("moviesUS: ", moviesUS);
   const movies = moviesUS;
-
   const videoArea = document.querySelector(".video_area");
 
   // Type = Trailer 값 출력
