@@ -1,3 +1,5 @@
+import { clickedID } from "./script.js";
+
 export function photo() {
   const imgbox = document.querySelector(".imgbox");
   const options = {
@@ -9,7 +11,7 @@ export function photo() {
     },
   };
   const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w200/";
-  const KEY = 575264;
+  const KEY = clickedID;
 
   function fetchThen(data) {
     let backDrops = data["backdrops"];

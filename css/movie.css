@@ -35,6 +35,10 @@ a {
   cursor: pointer;
 }
 
+.highlight {
+  color:rgb(255, 37, 37);
+}
+
 /* 헤더 */
 .logo_area {
   display: flex;
@@ -50,7 +54,7 @@ a {
 .full_logo {
   display: flex;
   align-items: center;
-  justify-items: left;
+  justify-items: flex-start;
   flex-direction: row;
   width: 1100px;
 
@@ -151,11 +155,24 @@ a {
   /* border: 3px dotted rgb(231, 132, 18); */
 }
 
-.detail_Top_Inner > p {
-  margin-right: 15px;
-
-  /* border: 3px dotted rgb(0, 0, 0); */
+.detail_Top_Inner .highlight {
+  margin-right: 3px;
 }
+
+.detail_Top_Inner p::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  margin: 5px 10px 0;
+  background: #ddd;
+  vertical-align: top;
+}
+
+.detail_Top_Inner p:last-child::after {
+  content: none;
+}
+
 
 .detail_Bottom {
   display: flex;
@@ -168,7 +185,7 @@ a {
   padding-top: 10px;
   margin-top: 20px;
   border-top: 2px solid #eee;
-
+ 
   /* border: 3px dotted rgb(231, 132, 18); */
 }
 

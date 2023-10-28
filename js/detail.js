@@ -2,10 +2,9 @@ import { movie } from "./movie.js";
 import { detailList } from "./detailList.js"
 import { showReview, backToTop } from "./review.js";
 import { photo } from "./photo.js";
-
 import { clickedID } from "./script.js";
 
-const API_ID = clickedID; // code8(임의 id값)
+const API_ID = clickedID; // (461130 code8 임의 id값)
 
 // 가져올 API 링크
 const options = {
@@ -32,7 +31,7 @@ async function detailMovies() {
 	const detailsData = await fetch(API_Details_KR, options)
 		.then(res => res.json())
 		.catch(err => console.error(err));
-		const detailsListKR = detailsData;
+	const detailsListKR = detailsData;
 
 	// API 3 - 세부정보 하단
 	const creditsData = await fetch(API_Credits_KR, options)
