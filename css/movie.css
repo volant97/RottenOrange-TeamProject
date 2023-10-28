@@ -45,7 +45,6 @@ a {
   align-items: center;
   height: 55px;
   background-color: black;
-  /* border: 3px dotted rgb(248, 52, 52); */
 }
 
 .full_logo {
@@ -66,12 +65,9 @@ a {
   background-image: url("../assets/icon/icons8-orange-64.png");
   background-repeat: no-repeat;
   background-position: 50% 120%;
-
   width: 60px;
   height: 60px;
   scale: 70%;
-
-  /* border: 3px dotted rgb(248, 52, 52); */
 }
 
 .rotten {
@@ -112,7 +108,6 @@ a {
 
 .detail_Top_Header {
   margin-bottom: 1rem;
-  /* border: 3px dotted rgb(231, 132, 18); */
 }
 
 .detail_Top_Inner {
