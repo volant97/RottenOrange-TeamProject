@@ -4,7 +4,7 @@ import { detailList } from "./detailList.js";
 import { showReview, backToTop } from "./review.js";
 import { photo } from "./photo.js";
 
-const API_ID = clickedID; // (461130 code8 임의 id값)
+const API_ID = clickedID; // (461130 code8 임의 id값) (976573 엘리멘탈)
 
 const options = {
   method: "GET",
