@@ -1,3 +1,5 @@
+import { clickedID } from "./script.js";
+
 function showReview() {
   const review = document.querySelector(".review");
   const name = document.querySelector(".name");
@@ -22,7 +24,12 @@ function showReview() {
   if (savedReviews !== null) {
     const parsedReviews = JSON.parse(savedReviews);
     reviews = parsedReviews;
-    parsedReviews.forEach(drawReviews);
+    parsedReviews
+      .filter((review) => {
+        console.log(review.movieID, clickedID);
+        return review.movieID === clickedID;
+      })
+      .forEach(drawReviews);
   }
 
   //시간 표시
@@ -57,7 +64,6 @@ function showReview() {
 
   // 리뷰 삭제
   const deleteBtnAll = document.querySelectorAll(".deleteBtn");
-
   deleteBtnAll.forEach((item, index) => {
     item.addEventListener("click", function (event) {
       let reviewEl = event.target.parentElement; // 부모 요소
@@ -110,6 +116,7 @@ function showReview() {
       alert("폼을 입력해주세요!");
     } else {
       const newReview = {
+        movieID: clickedID,
         id: Date.now(),
         name: newName,
         password: newPwd,

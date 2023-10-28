@@ -40,7 +40,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 55px;
   background-color: black;
 
@@ -50,11 +49,10 @@ a {
 .full_logo {
   display: flex;
   align-items: center;
-  justify-items: left;
+  justify-items: flex-start;
   flex-direction: row;
   width: 1100px;
-
-  /* border: 3px dotted rgb(104, 194, 247); */
+  background-color: aqua;
 }
 
 .orange_icon {
