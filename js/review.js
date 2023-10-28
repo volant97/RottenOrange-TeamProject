@@ -24,7 +24,7 @@ function showReview() {
 
   // localStorage에 리뷰 리스트 저장
   function saveReviews() {
-    localStorage.setItem("reviews", JSON.stringify(reviews));
+    localStorage.setItem("reviews", JSON.stringify(reviews)); // 문자화시키는 메서드
   }
   //시간 표시
   function generateTime() {
@@ -44,7 +44,7 @@ function showReview() {
   // localStorage에 저장된 리뷰 리스트 불러오기
   const savedReviews = localStorage.getItem("reviews");
   if (savedReviews !== null) {
-    const parsedReviews = JSON.parse(savedReviews);
+    const parsedReviews = JSON.parse(savedReviews); //parse string => 배열값으로 바뀜
     reviews = parsedReviews;
     parsedReviews.forEach(drawReviews);
   }
@@ -65,23 +65,11 @@ function showReview() {
     `;
     reviewList.innerHTML += temp_html;
 
-    // (1)삭제 (패스워드가 일치해야 삭제 가능)
-    // const deleteBtn = document.querySelector(".deleteBtn");
-    // deleteBtn.addEventListener("click", function (event) {
-    //   event.preventDefault();
-    //   let reviewElement = event.target.parentElement;
-    //   let prevPw = event.target.id;
-    //   handleModal(prevPw);
-
-    //   li.remove();
-    //   reviews = reviews.filter((review) => review.id !== parseInt(li.id)); // 선택한 값을 제외한 배열 반환
-    //   saveReviews();
-    // });
+   
   }
 
   // 리뷰 삭제
   const deleteBtnAll = document.querySelectorAll(".deleteBtn");
-  console.log(deleteBtnAll);
   deleteBtnAll.forEach((item, index) => {
     item.addEventListener("click", function (event) {
       let list = event.target.parentElement;
