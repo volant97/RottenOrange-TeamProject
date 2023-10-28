@@ -1,8 +1,9 @@
 import { clickedID } from "./script.js";
 import { movie } from "./movie.js";
 import { detailList } from "./detailList.js";
-import { showReview, backToTop } from "./review.js";
+import { showReview } from "./review.js";
 import { photo } from "./photo.js";
+import { scrollTop } from "./scrollTop.js";
 
 const API_ID = clickedID; // (461130 code8 임의 id값) (976573 엘리멘탈)
 
@@ -57,7 +58,7 @@ async function detailMovies() {
   detailList(detailsListKR, creditsKR);
   photo();
   showReview(clickedID);
-  backToTop();
+  scrollTop();
 }
 
 // run

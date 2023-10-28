@@ -14,16 +14,17 @@
 </head>
 
 <body>
-
-    <!-- 상단 -->
-
-    <!-- 1-1 -->
+    <!-- Header -->
     <header class="logo_area">
-        <a class="full_logo cursor" href="./index.html">
-            <div class="orange_icon"></div>
-            <h1 class="rotten">Rotten Orange</h1>
-        </a>
+        <div class="full_logo" >
+            <a class="cursor" href="./index.html">
+                <div class="orange_icon"></div>
+                <h1 class="rotten">Rotten Orange</h1>
+            </a>
+        </div>
     </header>
+
+    <!-- Movie -->
     <main class="movie_area">
 
         <section class="video_area">
@@ -59,20 +60,14 @@
         </section>
     </main>
 
-    <!-- 1-2 -->
-
+    <!-- Photo -->
     <div class="main">
         <div class="photo_title">
             <h1>포토</h1>
         </div>
-
         <div class="imgbox">
         </div>
     </div>
-
-    <!-- 슬라이드 -->
-
-
 
     <!-- Review -->
     <div class="review_container">
@@ -86,12 +81,12 @@
         </div>
         <form class="review">
             <div class="user hidden">
-                <input class="name" type="text" placeholder="닉네임">
-                <input class="password" type="password" placeholder="비밀번호">
+                <input class="name" type="text" placeholder="닉네임" maxlength="20" required>
+                <input class="password" type="password" placeholder="비밀번호" maxlength="30" required>
             </div>
             <div class="comment_container">
-                <input class="comment" type="text" placeholder="감상평을 입력해주세요.">
-                <button>등록</button>
+                <input class="comment" type="text" placeholder="감상평을 작성해주세요.  (70자 이내로 작성해주세요)" maxlength="70" required>
+                <button>등록</button>    
             </div>
         </form>
 
@@ -103,17 +98,17 @@
         <form class="modal_content">
             <h2>비밀번호를 입력하세요</h2>
             <div>
-                <input type="text" placeholder="비밀번호를 입력해주세요.">
+                <input type="text" placeholder="비밀번호를 입력해주세요." required>
                 <button>완료</button>
             </div>
         </form>
     </div>
-    <button id="go-top"><svg xmlns="http://www.w3.org/2000/svg" height="2rem"
-            viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-            <path
-                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
-        </svg></button>
 
+    <!-- scrollTop -->
+    <button id="go-top"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/>
+    </svg></button>
+
+    <!-- Footer -->
     <footer>
         <a href="./index.html">Copyright ⓒ Rotten Orange Corp.</a>
     </footer>
