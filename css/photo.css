@@ -21,8 +21,6 @@
   flex-wrap: nowrap;
   overflow: scroll;
   width: 100%;
-
-  /* border: 3px dotted rgb(0, 0, 0); */
 }
 
 .imgbox > img {
@@ -39,5 +37,4 @@
 .movieImage {
   width: 1100px;
   width: 1100px;
-  /* border: 3px dotted rgb(240, 91, 91); */
 }
