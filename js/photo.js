@@ -19,6 +19,8 @@ export function photo() {
       let temHtml = `
             <div class="movieImage">
                 <img src="${IMAGE_BASE_URL}${filePath}"/>
+                <div class="slide_prev_button slide_button">◀</div>
+                <div class="slide_next_button slide_button">▶</div>
             </div>
         `;
       imgbox.insertAdjacentHTML("beforeend", temHtml);

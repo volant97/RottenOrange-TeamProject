@@ -24,7 +24,7 @@
 } */
 .photo_title{
     margin-top: -250px;
-    margin-right: -60px;
+    margin-right: 1050px;
 }
 
 .imgbox {
@@ -33,12 +33,39 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
-
     overflow: hidden;
     width: 1100px;
-
     border: 3px dotted rgb(0, 0, 0);
+    
 }
+.slide_button {
+    /* layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* position */
+    position: absolute;
+    /* 버튼이 중앙에 위치하게 하기위해 계산 */
+    top: calc(131% - 5px);
+  
+    /* size */
+    width: 32px;
+    height: 32px;
+  
+    /* style */
+    border-radius: 100%;
+    background-color: #cccc;
+    cursor: pointer;
+  }
+  .slide_prev_button {
+    left: 365px;
+  }
+  .slide_next_button {
+    right: 365px;
+  }
+    
+
 
 
 .movieImage {
