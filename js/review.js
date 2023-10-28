@@ -1,3 +1,5 @@
+import { clickedID } from "./script.js";
+
 function showReview() {
   const review = document.querySelector(".review");
   const name = document.querySelector(".name");
@@ -22,10 +24,16 @@ function showReview() {
   if (savedReviews !== null) {
     const parsedReviews = JSON.parse(savedReviews);
     reviews = parsedReviews;
-    parsedReviews.forEach(drawReviews);
+    parsedReviews
+      .filter((review) => {
+        console.log(review.movieID, clickedID);
+        return review.movieID === clickedID;
+      })
+      .forEach(drawReviews);
   }
 
   //시간 표시
+
   function generateTime() {
     const date = new Date();
     const year = date.getFullYear();
@@ -34,7 +42,6 @@ function showReview() {
     const hour = date.getHours();
     const min = date.getMinutes();
     const sec = date.getSeconds();
-
     const time =
       year + "-" + month + "-" + wDate + " " + hour + ":" + min + ":" + sec;
     return time;
@@ -42,16 +49,17 @@ function showReview() {
 
   function drawReviews(newReview) {
     let temp_html = `
-        <div id="${newReview.id}" class="review_content">
-          <div>
-            <p>${newReview.name}:</p>
-            <p>${newReview.comment}</p>
-          </div>
-          <p class="time">${newReview.time}</p>
-          <p id="password" class="password hidden" data-value="${newReview.password}">${newReview.password}</p>
-          <button id="${newReview.id}" class="deleteBtn">삭제</button>          
+      <div id="${newReview.id}" class="review_content">
+        <div>
+          <p>${newReview.name}:</p>
+          <p>${newReview.comment}</p>
         </div>
-    `;
+        <p class="time">${newReview.time}</p>
+        <p id="password" class="password hidden" data-value="${newReview.password}">${newReview.password}</p>
+        <button id="${newReview.id}" class="deleteBtn">삭제</button>
+      </div>
+      `;
+
     reviewList.innerHTML += temp_html;
   }
 
@@ -70,17 +78,14 @@ function showReview() {
 
   function handleModal(reviewEl, savedID, prevPw) {
     deleteModal.classList.remove("hidden");
-
     const modalForm = document.querySelector(".modal_content");
     const input = document.querySelector(".modal_content input");
     input.focus();
     console.log(`저장된 pw: ${prevPw}`);
-
     modalForm.addEventListener("submit", function (event) {
       const inputPw = input.value;
       console.log(`입력된 pw: ${inputPw}`);
       input.value = "";
-
       if (inputPw === prevPw) {
         reviewEl.remove();
         // localstorage 삭제
@@ -110,6 +115,7 @@ function showReview() {
       alert("폼을 입력해주세요!");
     } else {
       const newReview = {
+        movieID: clickedID,
         id: Date.now(),
         name: newName,
         password: newPwd,
@@ -133,6 +139,7 @@ function showReview() {
 }
 
 // 스크롤 업 기능
+
 const backToTop = () => {
   window.addEventListener("scroll", () => {
     if (document.querySelector("html").scrollTop > 100) {
@@ -150,6 +157,7 @@ const backToTop = () => {
     });
   });
 };
+
 backToTop();
 
 export { showReview, backToTop };

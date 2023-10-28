@@ -1,4 +1,5 @@
 export function detailList(detailsListKR, creditsKR) {
+
     const detailTop = document.querySelector(".detail_Top");
     const detailBottom = document.querySelector(".detail_Bottom");
 
@@ -87,33 +88,4 @@ export function detailList(detailsListKR, creditsKR) {
 
     // ----작성중-----
 
-
-
-
-
-
-
-
-
-
-
-    // console.log(actor[0].name + actor[2].name);
 }
-
-
-
-
-// // (1) map -> 결과를 배열로 반환
-// let actorName = actors.map((actor) => {
-//     return actor.name;
-//   });
-//   console.log(actorName);
-//   // (2) map 리턴값 없이 사용 가능 (forEach와 같음)
-//   actors.map((actor) => {
-//     console.log(`map -> ${actor.name}`);
-//   });
-//   // (3) forEach -> 값을 순회하면서 실행 (리턴값 없음(undefined))
-//   actors.forEach((actor) => {
-//     console.log(`forEach -> ${actor.name}`);
-//     // 요소 가져와서 값 대입!
-//   });

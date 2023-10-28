@@ -44,10 +44,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 55px;
   background-color: black;
-
   /* border: 3px dotted rgb(248, 52, 52); */
 }
 
@@ -57,8 +55,6 @@ a {
   justify-items: flex-start;
   flex-direction: row;
   width: 1100px;
-
-  /* border: 3px dotted rgb(104, 194, 247); */
 }
 
 .orange_icon {
