@@ -41,6 +41,10 @@ a {
 
 /* ---------------헤더--------------- */
 header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background-color: black;
     height: 55px;
 }
@@ -53,10 +57,9 @@ header {
 .full_logo {
     display: flex;
     width: 1100px;
-    height: 30px;
-    margin-left: -20px;
-    margin-top: 10px;
     align-items: center;
+    justify-items: left;
+    flex-direction: row;
 }
 
 .orange_icon {
@@ -72,8 +75,6 @@ header {
 .rotten {
     font-family: 'Giants-Inline';
     font-size: 25px;
-    padding-top: 5px;
-    margin-left: -5px;
     color: orange;
 }
 
@@ -181,7 +182,7 @@ header {
     border: 0 none;
     background-color: transparent;
     cursor: pointer;
-    background-image: url("/assets/icon/icons8-search-48.png");
+    background-image: url("../assets/icon/icons8-search-48.png");
     scale: 90%;
 }
 
@@ -193,7 +194,7 @@ header {
     text-indent: -9999px;
     border: 0 none;
     background-color: transparent;
-    background-image: url("/assets/icon/icons8-reload-30.png");
+    background-image: url("../assets/icon/icons8-reload-30.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     scale: 100%;

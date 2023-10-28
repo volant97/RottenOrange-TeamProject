@@ -40,23 +40,23 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 55px;
   background-color: black;
+
+  /* border: 3px dotted rgb(248, 52, 52); */
 }
 
 .full_logo {
   display: flex;
   align-items: center;
-  justify-items: start;
+  justify-items: flex-start;
   flex-direction: row;
-  max-width: 1100px;
-
-  /* border: 3px dotted rgb(248, 52, 52); */
+  width: 1100px;
+  background-color: aqua;
 }
 
 .orange_icon {
-  background-image: url("/assets/icon/icons8-orange-64.png");
+  background-image: url("../assets/icon/icons8-orange-64.png");
   background-repeat: no-repeat;
   background-position: 50% 120%;
 
@@ -70,6 +70,7 @@ a {
 .rotten {
   font-family: "Giants-Inline";
 
+  font-size: 25px;
   color: orange;
 }
 

@@ -14,13 +14,14 @@
 </head>
 
 <body>
+
+    <!-- 상단 -->
+
     <!-- 1-1 -->
     <header class="logo_area">
-        <a href="./index.html">
-        <div class="full_logo cursor">
-                <div class="orange_icon"></div>
-                <h1 class="rotten">Rotten Orange</h1>
-            </div>
+        <a class="full_logo cursor" href="./index.html">
+            <div class="orange_icon"></div>
+            <h1 class="rotten">Rotten Orange</h1>
         </a>
     </header>
     <main class="movie_area">
@@ -30,16 +31,16 @@
             </section>
         <section class="detail_area">
             <div class="detail_Top">
-                <h1 class="detail_Top_Header">제목</h1>
+                <!-- <h1 class="detail_Top_Header">제목</h1>
                 <div class="detail_Top_Inner">
                     <p>★평점</p>
                     <p>개봉</p>
                     <p>러닝타임</p>
                     <p>장르</p>
-                </div>
+                </div> -->
             </div>
             <div class="detail_Bottom">
-                <div class="detail_Bottom_Inner">
+                <!-- <div class="detail_Bottom_Inner">
                     <p class="detail_Bottom_Header">감독</p>
                     <p class="detail_Bottom_Text">내용</p>
                 </div>
@@ -52,13 +53,10 @@
                     <p class="detail_Bottom_Intro">불, 물, 공기, 흙 4개의 원소들이 살고 있는 ‘엘리멘트 시티’ 재치 있고 불처럼 열정 넘치는 ‘앰버'는 어느 날 우연히
                         유쾌하고 감성적이며 물 흐르듯 사는 '웨이드'를 만나 특별한 우정을 쌓으며, 지금껏 믿어온 모든 것들이 흔들리는 새로운 경험을 하게 되는데... 웰컴 투 ‘엘리멘트 시티’!
                     </p>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
-
-
-
 
     <!-- 1-2 -->
 
@@ -85,7 +83,7 @@
         <form class="review">
             <div class="user hidden">
                 <input class="name" type="text" placeholder="닉네임">
-                <input class="password" type="text" placeholder="비밀번호">
+                <input class="password" type="password" placeholder="비밀번호">
             </div>
             <div class="comment_container">
                 <input class="comment" type="text" placeholder="감상평을 입력해주세요.">
@@ -100,12 +98,18 @@
     <div class="modal_container hidden">
         <form class="modal_content">
             <h2>비밀번호를 입력하세요</h2>
-            <input type="text" placeholder="비밀번호를 입력해주세요.">
-            <button>완료</button>
+            <div>
+                <input type="text" placeholder="비밀번호를 입력해주세요.">
+                <button>완료</button>
+            </div>
         </form>
     </div>
     <button id="go-top"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/>
     </svg></button>
+
+    <footer>
+        <a href="./index.html">Copyright ⓒ Rotten Orange Corp.</a>
+    </footer>
 
 </body>
 
