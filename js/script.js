@@ -39,11 +39,10 @@ function fetchThen(data) {
         let _overview = item["overview"];
         let _title = item["title"];
         let _poster_path = item["poster_path"];
-        let _vote_average = item["vote_average"];
+        let _vote_average = item["vote_average"].toFixed(1);
 
         let temp_html = `
-        <a href="./detailedpage.html">
-		<div data-id="${_id} "class="movieCard">
+        <a data-id="${_id} "class="movieCard" href="./detailedpage.html">
 			<div class="movieImage">
 				<img src="${IMAGE_BASE_URL}${_poster_path}"/>
 			</div>
@@ -56,8 +55,7 @@ function fetchThen(data) {
 			<div class="movieGrade">
 				<p>평점 : ${_vote_average}</p>
 			</div>
-		</div>
-        </a>`;
+		</a>`;
 
         movieCardList.insertAdjacentHTML("beforeend", temp_html);
     });
@@ -120,10 +118,10 @@ function fetchThen(data) {
                 const overview = result["overview"];
                 const title = result["title"];
                 const posterPath = result["poster_path"];
-                const voteAverage = result["vote_average"];
+                const voteAverage = result["vote_average"].toFixed(1);
 
                 const temp_html = `
-				<div data-id="${id} "class="movieCard">
+				<a data-id="${id} "class="movieCard" href="./detailedpage.html">
 					<div class="movieImage">
 						<img src="${IMAGE_BASE_URL}${posterPath}"/>
 					</div>
@@ -136,7 +134,7 @@ function fetchThen(data) {
 					<div class="movieGrade">
 						<p>평점 : ${voteAverage}</p>
 					</div>
-				</div>`;
+				</a>`;
 
                 movieCardList.insertAdjacentHTML("beforeend", temp_html);
 
@@ -145,7 +143,7 @@ function fetchThen(data) {
                 movieCards.forEach((card) => {
                     card.addEventListener("click", function () {
                         let movieCardId = this.getAttribute("data-id");
-                        alert(`ID : ${movieCardId}`);
+                        localStorage.setItem("clickID", movieCardId);
                         // location.href = `./index.html?id=${movieCardId}`;
                     });
                 });
