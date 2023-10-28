@@ -3,7 +3,9 @@ import { detailList } from "./detailList.js"
 import { showReview, backToTop } from "./review.js";
 import { photo } from "./photo.js";
 
-const API_ID = 980489; // 엘리멘탈(임의 id값)
+import { clickedID } from "./script.js";
+
+const API_ID = clickedID; // code8(임의 id값)
 
 // 가져올 API 링크
 const options = {
@@ -22,17 +24,20 @@ const API_Credits_KR = `https://api.themoviedb.org/3/movie/${API_ID}/credits?lan
 async function detailMovies() {
 	// API 1 - 영상
 	const videoDdata = await fetch(API_Videos_US, options)
-		.then(res => res.json());
+		.then(res => res.json())
+		.catch(err => console.error(err));
 	const moviesUS = videoDdata.results;
 
 	// API 2 - 세부정보 상단
 	const detailsData = await fetch(API_Details_KR, options)
-		.then(res => res.json());
+		.then(res => res.json())
+		.catch(err => console.error(err));
 		const detailsListKR = detailsData;
 
 	// API 3 - 세부정보 하단
 	const creditsData = await fetch(API_Credits_KR, options)
-	.then(res => res.json());
+	.then(res => res.json())
+	.catch(err => console.error(err));
 	const creditsKR = creditsData;
 
 	movie(moviesUS);
