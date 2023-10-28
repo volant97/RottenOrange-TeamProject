@@ -46,7 +46,7 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  overflow: hidden;
+  overflow: scroll;
   width: 1100px;
 
   /* border: 3px dotted rgb(0, 0, 0); */
