@@ -168,15 +168,26 @@ function feature(data) {
 
     let temp_html = `
 	<div class="movievisual_list">
-	<strong class="tit_feature">${_title}</strong>
-	<p class="txt_feature">${_overview}</p>
-	<div class="movievisual_BG">
-		</div>
+	    <div class="tit_feature"><strong>${_title}</strong></div>
+	    <div class="txt_feature"><p>${_overview}</p></div>
+        <div class="goToMovieBox">
+            <a data-id="${_id} "class="goToMovie" href="./detailedpage.html">
+                <button class="w-btn-outline w-btn-indigo-outline">예고편 보기</button>
+            </a>
+            </div>
+	    <div class="movievisual_BG"></div>
 	</div>
 	`;
 
     feature_home.style.backgroundImage = `url("${IMAGE_BASE_URL}${_poster_path}")`;
     feature_home.insertAdjacentHTML("beforeend", temp_html);
+    
+    const goToMovie = document.querySelector(".goToMovie");
+    goToMovie.addEventListener("click", function () {
+        let movieCardId = this.getAttribute("data-id");
+        localStorage.setItem("clickID", movieCardId);
+        // location.href = `./index.html?id=${movieCardId}`;
+    });
 }
 
 

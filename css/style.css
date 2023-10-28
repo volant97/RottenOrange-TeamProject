@@ -14,7 +14,8 @@
 }
 
 body,
-input {
+input,
+button {
 	font-family: "DNFForgedBlade";
 }
 
@@ -140,6 +141,47 @@ a {
 	z-index: 2;
 	top: 250px;
 }
+
+.goToMovieBox {
+	display: block;
+	position: absolute;
+	z-index: 2;
+	top: 400px;
+}
+
+.w-btn-outline {
+    position: relative;
+	margin-left: 10px;
+    padding: 8px 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+	background-color: inherit;
+	scale: 110%
+}
+
+.w-btn-outline:active {
+    transform: scale(1.5);
+}
+
+.w-btn-outline:hover {
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.w-btn-indigo-outline {
+    border: 2px solid aliceblue;
+    color: orange;
+}
+
+.w-btn-indigo-outline:hover {
+    color: orange;
+    background: aliceblue;
+}
+
 
 /* ---------------하단--------------- */
 .section_home {
