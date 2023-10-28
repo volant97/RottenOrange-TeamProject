@@ -1,19 +1,7 @@
-#refresh {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  margin-top: 5px;
-  margin-left: 5px;
-  padding-left: 10px;
-}
-
 .review_container {
-  /* background-color: rgb(231, 231, 231); */
   max-width: 1100px;
   margin: 30px auto 0 auto;
   padding: 10px 20px;
-  border-radius: 5px;
 }
 
 .review_container > div {
@@ -42,6 +30,16 @@
   width: 15rem;
 }
 
+#refresh {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 5px;
+  padding-left: 10px;
+}
+
 .review .comment_container {
   height: 50px;
   display: flex;
@@ -58,11 +56,16 @@
 }
 
 .review .comment_container > button {
-  height: 2rem;
-  width: 4rem;
-  /* background: linear-gradient(-45deg, #33ccff 0%, #ff99cc 100%); */
-  color: #333;
-  border-radius: 10px;
+  height: 35px;
+  width: 60px;
+  min-width: 40px;
+  border-radius: 5px;
+}
+
+.review .comment_container > button:hover {
+  background-color: orange;
+  color: #fff;
+  transition-duration: 0.3s;
 }
 
 /* Review List */
@@ -83,24 +86,38 @@
   padding: 1rem 0;
 }
 
-.review_content div {
+.review_content > div {
   display: flex;
+  flex-direction: column;
 }
 
-.review_content div p {
+.review_content > div p {
   font-size: 16px;
   padding-left: 5px;
+  margin-bottom: 4px;
 }
 
-.review_content .time {
-  position: absolute;
-  right: 6rem;
-  color: #777;
+.review_content > div p:last-child {
+  margin-bottom: 0px;
+  color: #999;
 }
 
 .review_content button {
-  margin-left: 0.5rem;
+  display: none;
   margin-right: 15px;
+  height: 30px;
+  width: 50px;
+  min-width: 40px;
+  border-radius: 5px;
+}
+
+.review_content:hover button {
+  display: block;
+}
+.review_content button:hover {
+  background-color: orange;
+  color: #fff;
+  transition-duration: 0.3s;
 }
 
 /* modal */
@@ -118,13 +135,13 @@
 
 .modal_content {
   background-color: white;
-  position: absolute;
+  position: fixed;
   padding: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  top: 70%;
+  top: 30%;
 }
 
 .modal_content > h2 {
