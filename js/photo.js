@@ -25,6 +25,22 @@ export function photo() {
         `;
       imgbox.insertAdjacentHTML("beforeend", temHtml);
     });
+
+    const movieImages = document.querySelectorAll(".movieImage");
+    const preview = document.querySelector(".preview");
+
+    movieImages.forEach((movieImage) => {
+      movieImage.addEventListener("click", function (event) {
+        const previewImg = event.target.src;
+        preview.innerHTML = "";
+        preview.innerHTML = `
+          <img src="${previewImg}">
+        `;
+        // 클릭된 이미지 값 가져오기
+        console.log(event.target);
+        preview.classList.toggle("hidden");
+      });
+    });
   }
 
   fetch(`https://api.themoviedb.org/3/movie/${KEY}/images`, options)

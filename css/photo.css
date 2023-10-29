@@ -40,3 +40,17 @@
   justify-content: flex-start;
   margin: 0px 10px;
 }
+.movieImage:hover {
+  /* hover 시 애니메이션 */
+  transform: scale(1.1);
+  /* 이미지 확대 */
+  transition: transform .5s;
+  /* 시간 설정 */
+}
+
+.preview {
+  max-width: 1100px;
+  height: 500px;
+  background-color: aquamarine;
+  margin: 10px 0 0 10px;
+}
