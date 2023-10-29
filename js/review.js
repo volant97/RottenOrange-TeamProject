@@ -1,4 +1,6 @@
-function showReview() {
+import { clickedID } from "./script.js";
+
+export function showReview() {
   const review = document.querySelector(".review");
   const name = document.querySelector(".name");
   const password = document.querySelector(".password");
@@ -22,36 +24,26 @@ function showReview() {
   if (savedReviews !== null) {
     const parsedReviews = JSON.parse(savedReviews);
     reviews = parsedReviews;
-    parsedReviews.forEach(drawReviews);
-  }
-
-  //시간 표시
-  function generateTime() {
-    const date = new Date();
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const wDate = date.getDate();
-    const hour = date.getHours();
-    const min = date.getMinutes();
-    const sec = date.getSeconds();
-
-    const time =
-      year + "-" + month + "-" + wDate + " " + hour + ":" + min + ":" + sec;
-    return time;
+    parsedReviews
+      .filter((review) => {
+        return review.movieID === clickedID;
+      })
+      .forEach(drawReviews);
   }
 
   function drawReviews(newReview) {
     let temp_html = `
-        <div id="${newReview.id}" class="review_content">
-          <div>
-            <p>${newReview.name}:</p>
-            <p>${newReview.comment}</p>
-          </div>
+      <div id="${newReview.id}" class="review_content">
+        <div>
+          <p>${newReview.name}</p>
+          <p>${newReview.comment}</p>
           <p class="time">${newReview.time}</p>
-          <p id="password" class="password hidden" data-value="${newReview.password}">${newReview.password}</p>
-          <button id="${newReview.id}" class="deleteBtn">삭제</button>          
         </div>
-    `;
+        <p id="password" class="password hidden" data-value="${newReview.password}">${newReview.password}</p>
+        <button id="${newReview.id}" class="deleteBtn">삭제</button>
+      </div>
+      `;
+
     reviewList.innerHTML += temp_html;
   }
 
@@ -70,17 +62,15 @@ function showReview() {
 
   function handleModal(reviewEl, savedID, prevPw) {
     deleteModal.classList.remove("hidden");
-
     const modalForm = document.querySelector(".modal_content");
     const input = document.querySelector(".modal_content input");
     input.focus();
     console.log(`저장된 pw: ${prevPw}`);
-
     modalForm.addEventListener("submit", function (event) {
+      event.preventDefault();
       const inputPw = input.value;
       console.log(`입력된 pw: ${inputPw}`);
       input.value = "";
-
       if (inputPw === prevPw) {
         reviewEl.remove();
         // localstorage 삭제
@@ -89,11 +79,24 @@ function showReview() {
         );
         saveReviews();
         deleteModal.classList.add("hidden");
+        window.location.reload();
       } else {
-        event.preventDefault();
-        alert("비밀번호를 다시 입력해주세요.");
+        alert("비밀번호가 틀렸습니다.");
+        window.location.reload();
       }
     });
+  }
+
+  function generateTime() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const wDate = date.getDate();
+    const hour = date.getHours();
+    const min = date.getMinutes();
+    const sec = date.getSeconds();
+    const time = `${year}-${month}-${wDate} ${hour}:${min}:${sec}`;
+    return time;
   }
 
   function handelReviews(event) {
@@ -106,23 +109,20 @@ function showReview() {
     password.value = "";
     comment.value = "";
 
-    if (!newName || !newPwd || !newCmd) {
-      alert("폼을 입력해주세요!");
-    } else {
-      const newReview = {
-        id: Date.now(),
-        name: newName,
-        password: newPwd,
-        comment: newCmd,
-        time: time,
-      };
+    const newReview = {
+      movieID: clickedID,
+      id: Date.now(),
+      name: newName,
+      password: newPwd,
+      comment: newCmd,
+      time: time,
+    };
 
-      reviews.push(newReview);
-      drawReviews(newReview);
-      user.classList.add("hidden");
-      saveReviews();
-      window.location.reload();
-    }
+    reviews.push(newReview);
+    drawReviews(newReview);
+    user.classList.add("hidden");
+    saveReviews();
+    window.location.reload();
   }
 
   comment.addEventListener("focus", function () {
@@ -131,25 +131,3 @@ function showReview() {
 
   review.addEventListener("submit", handelReviews);
 }
-
-// 스크롤 업 기능
-const backToTop = () => {
-  window.addEventListener("scroll", () => {
-    if (document.querySelector("html").scrollTop > 100) {
-      document.getElementById("go-top").style.display = "block";
-    } else {
-      document.getElementById("go-top").style.display = "none";
-    }
-  });
-
-  document.getElementById("go-top").addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
-  });
-};
-backToTop();
-
-export { showReview, backToTop };

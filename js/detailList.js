@@ -6,11 +6,11 @@ export function detailList(detailsListKR, creditsKR) {
     const detailsList = detailsListKR;
     const creditsList = creditsKR;
 
-  const title = detailsList.title;
-  const voteAverage = detailsList.vote_average;
-  const releaseDate = detailsList.release_date;
-  const runTime = detailsList.runtime;
-  const genres = detailsList.genres[0].name;
+    const title = detailsList.title;
+    const voteAverage = detailsList.vote_average.toFixed(1);
+    const releaseDate = detailsList.release_date;
+    const runTime = detailsList.runtime;
+    const genres = detailsList.genres[0].name;
 
     const director = creditsList.crew.find(item => {
         const job = item.job;
@@ -38,10 +38,10 @@ export function detailList(detailsListKR, creditsKR) {
     const tempHtmlTop = `
         <h1 class="detail_Top_Header">${title}</h1>
         <div class="detail_Top_Inner">
-            <p>★${voteAverage}</p>
-            <p>${releaseDate}</p>
-            <p>${runTime}</p>
-            <p>${genres}</p>
+            <p><span class="highlight interval">★</span>${voteAverage}</p>
+            <p class="borderLeft">${releaseDate}</p>
+            <p class="borderLeft">${runTime}분</p>
+            <p class="borderLeft">${genres}</p>
         </div>`;
 
     const tempHtmlBottom = `
