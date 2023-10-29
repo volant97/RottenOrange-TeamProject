@@ -10,7 +10,7 @@ export function photo() {
         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOGMxYmU2YTczNjk5NTEwM2E3YmUxZjA4ODlkM2ViMCIsInN1YiI6IjY1MzA4YmIyOWQ1OTJjMDBlY2NhNTFmYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HF5V0mA4wTGE3E-06jSiTT6eS-X9FYYsBKxv0zEgZc8",
     },
   };
-  const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w200/";
+  const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500/";
   const KEY = clickedID;
 
   function fetchThen(data) {
@@ -34,11 +34,16 @@ export function photo() {
         const previewImg = event.target.src;
         preview.innerHTML = "";
         preview.innerHTML = `
-          <img src="${previewImg}">
+          <span id="closeBtn" class="material-symbols-outlined">disabled_by_default</span>
+          <img class="previewImg" src="${previewImg}">
         `;
-        // 클릭된 이미지 값 가져오기
-        console.log(event.target);
-        preview.classList.toggle("hidden");
+        preview.classList.remove("hidden");
+
+        const closeBtn = document.querySelector("#closeBtn");
+        console.log(closeBtn);
+        closeBtn.addEventListener("click", function () {
+          preview.classList.add("hidden");
+        });
       });
     });
   }

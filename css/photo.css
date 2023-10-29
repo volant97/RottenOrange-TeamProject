@@ -2,7 +2,8 @@
   font-family: "DNFForgedBlade";
   font-style: normal;
   font-weight: 300;
-  src: url("//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Light.otf") format("opentype");
+  src: url("//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Light.otf")
+    format("opentype");
 }
 
 .main {
@@ -18,12 +19,6 @@
   margin-bottom: 1rem;
 }
 
-.imgbox>img {
-  width: 300px;
-  height: 200px;
-  margin: 5px;
-}
-
 .imgbox {
   display: flex;
   justify-content: start;
@@ -35,17 +30,27 @@
   max-width: 1100px;
 }
 
+.imgbox > img {
+  width: 300px;
+  height: 200px;
+  margin: 5px;
+}
+
 .movieImage {
   display: flex;
   justify-content: flex-start;
   margin: 0px 10px;
 }
 
+.movieImage > img {
+  width: 200px;
+}
+
 .movieImage:hover {
   /* hover 시 애니메이션 */
   transform: scale(1.1);
   /* 이미지 확대 */
-  transition: transform .5s;
+  transition: transform 0.5s;
   /* 시간 설정 */
 }
 
@@ -55,11 +60,21 @@
   background-color: black;
   margin: 10px 0 0 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  padding-bottom: 40px;
 }
 
-.preview>img {
+.preview > img {
   margin: auto;
-  width: 600px;
-  height: 310px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.preview > #closeBtn {
+  color: #eee;
+  padding: 10px 10px 0 0;
+  text-align: right;
+  font-size: 30px;
+  cursor: pointer;
 }
