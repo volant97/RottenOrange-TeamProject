@@ -11,6 +11,8 @@ const feature_BG = document.querySelector(".feature_BG");
 const languageBtn = document.querySelector(".languageBtn");
 const recMovieCardList = document.querySelector(".recommendMovieCardList");
 const recMovieCard = document.querySelector(".recommendMovieCard");
+const recommendMovieAll = document.querySelector(".recommendMovieAll");
+const recommendMovieBox = document.querySelector(".recommendMovieBox");
 
 // TMDB API
 const options = {
@@ -115,6 +117,7 @@ function fetchThen(data) {
                 match_movie.push(movies);
             }
             movieCardList.innerHTML = "";
+            
             // alert("검색 결과 있음");
             // 채워넣기
             match_movie.forEach((result) => {
@@ -141,6 +144,8 @@ function fetchThen(data) {
 				</a>`;
 
                 movieCardList.insertAdjacentHTML("beforeend", temp_html);
+                recommendMovieBox.classList.add("hidden");
+                recommendMovieAll.classList.add("hidden");
 
                 // 영화 카드 클릭 시 ID 띄우기(검색 화면)
                 const movieCards = document.querySelectorAll(".movieCard");

@@ -37,6 +37,10 @@ a {
 	cursor: pointer;
 }
 
+.hidden {
+	display: none;
+}
+
 /* ---------------헤더--------------- */
 .logo_area {
 	display: flex;
@@ -266,7 +270,7 @@ a {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-bottom: 0rem;
+	margin-bottom: 70px;
 }
 
 .recMovieCard {
@@ -307,7 +311,7 @@ a {
 /* 영화 순위 타이틀 */
 .tit_section {
 	height: 35px;
-	margin: 80px 10px 30px;
+	margin: 10px 10px 30px;
 	font-size: 30px;
 }
 
