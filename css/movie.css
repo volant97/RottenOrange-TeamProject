@@ -102,19 +102,19 @@ a {
 }
 
 .detail_Top {
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   border-bottom: solid 2px #eee;
 }
 
 .detail_Top_Header {
   margin-bottom: 1rem;
+  font-size: 1.8rem;
 }
 
 .detail_Top_Inner {
   display: flex;
 }
 
-/* 수정 */
 .detail_Top_Inner .highlight {
   margin-right: 3px;
 }
@@ -135,12 +135,13 @@ a {
 
 /* 수정 */
 .detail_Bottom {
-  padding-top: 1rem;
+  padding: 2rem 0;
 }
 /* 수정 */
 
 .detail_Bottom_Inner {
   display: flex;
+  margin-bottom: 0.7rem;
 }
 
 .detail_Bottom_Header {

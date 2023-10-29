@@ -7,10 +7,15 @@
 
 .main {
   max-width: 1100px;
-  margin: 100px auto 0 auto;
+  margin: 2rem auto 5rem auto;
   display: flex;
   flex-direction: column;
-  padding: 0 1rem;
+  padding: 1rem;
+}
+
+.photo_title {
+  width: 1100px;
+  margin-bottom: 1rem;
 }
 
 .imgbox > img {
@@ -27,13 +32,11 @@
   flex-wrap: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
-  width: 1100px;
+  max-width: 1100px;
 }
 
 .movieImage {
   display: flex;
   justify-content: flex-start;
   margin: 0px 10px;
-
-  /* border: 3px dotted rgb(240, 91, 91); */
 }

@@ -69,7 +69,6 @@ export function showReview() {
     modalForm.addEventListener("submit", function (event) {
       event.preventDefault();
       const inputPw = input.value;
-      console.log(`입력된 pw: ${inputPw}`);
       input.value = "";
       if (inputPw === prevPw) {
         reviewEl.remove();
