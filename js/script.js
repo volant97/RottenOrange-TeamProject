@@ -53,7 +53,7 @@ function fetchThen(data) {
 				<p>${_overview}</p>
 			</div>
 			<div class="movieGrade">
-				<p>평점 : ${_vote_average}</p>
+				<p>★ ${_vote_average}</p>
 			</div>
 		</a>`;
 
