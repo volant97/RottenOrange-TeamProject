@@ -1,0 +1,72 @@
+{
+  "adult": false,
+  "backdrop_path": "/4fLZUr1e65hKPPVw0R3PmKFKxj1.jpg",
+  "belongs_to_collection": null,
+  "budget": 200000000,
+  "genres": [
+    {
+      "id": 16,
+      "name": "애니메이션"
+    },
+    {
+      "id": 35,
+      "name": "코미디"
+    },
+    {
+      "id": 10751,
+      "name": "가족"
+    },
+    {
+      "id": 14,
+      "name": "판타지"
+    },
+    {
+      "id": 10749,
+      "name": "로맨스"
+    }
+  ],
+  "homepage": "",
+  "id": 976573,
+  "imdb_id": "tt15789038",
+  "original_language": "en",
+  "original_title": "Elemental",
+  "overview": "불, 물, 공기, 흙 4개의 원소들이 살고 있는 엘리멘트 시티. 재치 있고 불처럼 열정 넘치는 앰버는 어느 날 우연히 유쾌하고 감성적이며 물 흐르듯 사는 웨이드를 만나 특별한 우정을 쌓으며, 지금껏 믿어온 모든 것들이 흔들리는 새로운 경험을 하게 되는데...",
+  "popularity": 467.32,
+  "poster_path": "/1YYL1OcgjPLjAGi6n0iZe1gdl9i.jpg",
+  "production_companies": [
+    {
+      "id": 2,
+      "logo_path": "/wdrCwmRnLFJhEoH8GSfymY85KHT.png",
+      "name": "Walt Disney Pictures",
+      "origin_country": "US"
+    },
+    {
+      "id": 3,
+      "logo_path": "/1TjvGVDMYsj6JBxOAkUHpPEwLf7.png",
+      "name": "Pixar",
+      "origin_country": "US"
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2023-06-14",
+  "revenue": 490797988,
+  "runtime": 102,
+  "spoken_languages": [
+    {
+      "english_name": "English",
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Released",
+  "tagline": "세상은 반대에 끌린다",
+  "title": "엘리멘탈",
+  "video": false,
+  "vote_average": 7.747,
+  "vote_count": 2759
+}

@@ -1,77 +1,50 @@
 @font-face {
-    font-family: 'DNFForgedBlade';
-    font-style: normal;
-    font-weight: 300;
-    src: url('//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Light.otf')format('opentype')
+  font-family: "DNFForgedBlade";
+  font-style: normal;
+  font-weight: 300;
+  src: url("//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Light.otf") format("opentype");
 }
-.main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 310px;
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 310px;
 }
+
 .imgbox>img {
-    width: 300px;
-    height: 200px;
-    margin: 5px;
+  width: 300px;
+  height: 200px;
+  margin: 5px;
 }
+
 /* .movieImage{
     
     width: 200px;
     height: 115px;
     margin: 5px;
 } */
-.photo_title{
-    margin-top: -250px;
-    margin-right: 1050px;
+.photo_title {
+  margin-top: -250px;
+  margin-right: 1050px;
 }
 
 .imgbox {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    width: 1100px;
-    border: 3px dotted rgb(0, 0, 0);
-    
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 1100px;
 }
-.slide_button {
-    /* layout */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    /* position */
-    position: absolute;
-    /* 버튼이 중앙에 위치하게 하기위해 계산 */
-    top: calc(131% - 5px);
-  
-    /* size */
-    width: 32px;
-    height: 32px;
-  
-    /* style */
-    border-radius: 100%;
-    background-color: #cccc;
-    cursor: pointer;
-  }
-  .slide_prev_button {
-    left: 365px;
-  }
-  .slide_next_button {
-    right: 365px;
-  }
-    
-
-
 
 .movieImage {
-    
+  width: 1100px;
 
-    width: 1100px;
+  width: 1100px;
 
-    border: 3px dotted rgb(240, 91, 91);
+  /* border: 3px dotted rgb(240, 91, 91); */
 }

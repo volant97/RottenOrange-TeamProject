@@ -1,3 +1,5 @@
+import { clickedID } from "./script.js";
+
 export function photo() {
   const imgbox = document.querySelector(".imgbox");
   const options = {
@@ -9,7 +11,7 @@ export function photo() {
     },
   };
   const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w200/";
-  const KEY = 575264;
+  const KEY = clickedID;
 
   function fetchThen(data) {
     let backDrops = data["backdrops"];
@@ -19,8 +21,6 @@ export function photo() {
       let temHtml = `
             <div class="movieImage">
                 <img src="${IMAGE_BASE_URL}${filePath}"/>
-                <div class="slide_prev_button slide_button">◀</div>
-                <div class="slide_next_button slide_button">▶</div>
             </div>
         `;
       imgbox.insertAdjacentHTML("beforeend", temHtml);
