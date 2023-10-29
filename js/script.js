@@ -9,6 +9,8 @@ const movieImage = document.querySelector(".movieImage");
 const feature_home = document.querySelector(".feature_home");
 const feature_BG = document.querySelector(".feature_BG");
 const languageBtn = document.querySelector(".languageBtn");
+const recMovieCardList = document.querySelector(".recommendMovieCardList");
+const recMovieCard = document.querySelector(".recommendMovieCard");
 
 // TMDB API
 const options = {
@@ -25,6 +27,8 @@ const API_NowPlaying = "https://api.themoviedb.org/3/movie/now_playing?language=
 const API_Popular = "https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1";
 const API_Upcoming = "https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=1";
 const API_MovieImage = "https://api.themoviedb.org/3/movie/961268/images";
+
+
 
 // fetchThen 함수
 function fetchThen(data) {
@@ -191,6 +195,8 @@ function feature(data) {
 }
 
 
+
+
 // run
 async function mainRun() {
     await fetch(API_Popular, options)
@@ -201,7 +207,7 @@ async function mainRun() {
 
 export const clickedID = localStorage.getItem("clickID")
 
-mainRun();
+mainRun()
 
 
 
