@@ -199,7 +199,7 @@ a {
 	width: 500px;
 	height: 50px;
 	padding: 0 1px 0 1px;
-	margin: 5rem auto 3rem;
+	margin: 2rem auto 3rem;
 	justify-content: center;
 	border-bottom: 3px solid #383131;
 }
@@ -270,7 +270,7 @@ a {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-bottom: 70px;
+	margin-bottom: 100px;
 }
 
 .recMovieCard {
@@ -310,6 +310,9 @@ a {
 
 /* 영화 순위 타이틀 */
 .tit_section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 35px;
 	margin: 10px 10px 30px;
 	font-size: 30px;
@@ -318,7 +321,7 @@ a {
 .Top_Rated_highlight {
 	color: rgb(255, 59, 59);
 	font-size: 60%;
-	margin-left: 10px;
+	margin: 10px 10px 0;
 }
 
 /* 영화 카드 리스트 */
@@ -328,6 +331,7 @@ a {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+	margin-top: 10px;
 }
 
 .movieCard {
