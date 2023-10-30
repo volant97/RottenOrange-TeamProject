@@ -26,12 +26,8 @@
         </section>
         <section class="section_home">
             <div>
-                <form class="search_area">
-                    <input class="searchInput" type="text" placeholder="영화 제목을 입력해 주세요." autocomplete="off" required
-                        maxlength="20" />
-                    <button class="searchBtn">검색</button>
-                </form>
-                <form class="movie_area">
+                
+                <div class="movie_area">
                     <div class="Top_Rated">
                         <div class="recommendMovieAll">
                             <h2 class="recommend_tit">Rotten Orange<span class="Top_Rated_highlight">(제작사 추천 영화)</span>
@@ -43,6 +39,11 @@
                                 </div>
                             </div>
                         </div>
+                        <form class="search_area">
+                            <input class="searchInput" type="text" placeholder="영화 제목을 입력해 주세요." autocomplete="off" required
+                                maxlength="20" />
+                            <button class="searchBtn">검색</button>
+                        </form>
                         <div>
                             <h2 class="tit_section">영화 목록<span class="Top_Rated_highlight">(인기 영화)</span>
                                 <button class="reloadBtn reload" onClick="window.location.reload()">새로고침</button>
@@ -52,7 +53,7 @@
                         <div class="movieCardList">
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </section>
     </main>
